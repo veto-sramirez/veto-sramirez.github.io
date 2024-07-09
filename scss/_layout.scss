@@ -1,0 +1,148 @@
+:root {
+  --primary-flexadin-blue: #211451;
+  --primary-light-blue: #00A0DF;
+  --complimentary-acid-green: #85F19C;
+  --complimentary-yellow: #FFD541;
+  --complimentary-red: #BD4114;
+  --cool-grey: #A7A9AC;
+  --light-grey: #EDEDED;
+  --uc-ii-green: #71974A;
+  --dark-green: #4D5A30;
+}
+
+html {
+  /* 1 rem = 1 design pixel */
+  font-size: calc(100vw / 1366);
+  font-size: min(calc(100vw / 1366), calc(100vh / 1024));
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Poppins';
+  padding: 0;
+  margin: 0;
+
+  > main {
+    background-color: inherit;
+    width: 100vw;
+    height: 100vh;
+    top: 70rem;
+    left: 0;
+    position: absolute;
+  }
+
+  > div#blackout {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    position: fixed;
+    z-index: 1;
+  }
+
+  &.blackout {
+    > div#blackout {
+      display: block;
+    }
+  }
+}
+
+h1 {
+  font-family: 'Poppins';
+  font-size: 40rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2 {
+  font-family: 'Poppins';
+  font-size: 32rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--primary-flexadin-blue);
+
+  > sup {
+    font-family: 'Poppins';
+    font-size: 21rem;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 9rem;
+  }
+}
+
+h3 {
+  font-family: 'Poppins';
+  font-size: 28rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--primary-flexadin-blue);
+}
+
+h4 {
+  font-family: 'Poppins';
+  font-size: 24rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  &.green,
+  > span {
+    color: var(--complimentary-acid-green);
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  font-family: 'Poppins';
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28rem; /* 175% */
+
+  > b {
+    color: var(--uc-ii-green);
+  }
+}
+
+div.flexadin-heading {
+  flex-direction: column;
+  display: flex;
+}
+
+button {
+  border: none;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  cursor: pointer;
+
+  &.action {
+    border-radius: 15rem;
+    background-color: var(--primary-flexadin-blue);
+    font-family: 'Poppins';
+    font-size: 20rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--complimentary-acid-green);
+    //height: 64rem;
+    padding: 17rem 45rem;
+    gap: 10rem;
+
+    &.light {
+      border: 1rem solid var(--primary-flexadin-blue);
+      background-color: #fff;
+      color: var(--primary-flexadin-blue);
+    }
+  }
+}

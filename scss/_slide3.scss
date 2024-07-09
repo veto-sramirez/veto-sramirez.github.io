@@ -1,0 +1,326 @@
+body#slide3 {
+  background: url('../media/images/slide3/footprints.svg') no-repeat,
+    url('../media/images/slide3/green-block.svg') no-repeat;
+  background-size: 149rem 132rem, 345rem 465rem;
+  background-position: right 32rem top 20rem, right bottom;
+  font-family: 'Poppins';
+
+  div.flexadin-heading {
+    margin-bottom: 21rem;
+    position: relative;
+
+    &::before {
+      border-radius: 5rem;
+      background-color: var(--complimentary-acid-green);
+      width: 5rem;
+      height: calc(100% - 18rem);
+      top: 6rem;
+      bottom: 0;
+      left: -20rem;
+      content: '';
+      position: absolute;
+    }
+
+    &.second {
+      margin-bottom: 34rem;
+
+      &::before {
+        height: 90%;
+        top: 0;
+      }
+    }
+
+    > h3,
+    > p { 
+      animation-delay: 0.8s;
+
+      &:nth-of-type(2) {
+        animation-delay: 1.6s;
+      }
+  
+      &:nth-of-type(3) {
+        animation-delay: 2.4s;
+      }
+    }
+  }
+
+  > main {
+    padding-right: 112rem;
+    padding-left: 156rem;
+    gap: 49rem;
+    display: flex;
+
+    > section {
+      width: 100%;
+    }
+  }
+
+  section ul {
+    gap: 20rem;
+    flex-direction: column;
+    display: flex;
+    animation: fade-in-left 0.8s ease-out;
+
+    > li {
+      font-size: 20rem;
+      font-style: normal;
+      color: var(--primary-flexadin-blue);
+      height: 51rem;
+      padding-left: 67rem;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  section#introduction {
+    div#metrics-table {
+      animation: fade-in-right 0.8s ease-out;
+    }
+
+    > div {
+      width: 1055rem;
+      justify-content: space-between;
+      display: flex;
+
+      > ul {
+        > li {
+          &:nth-of-type(1) {
+            background: transparent url('../media/images/slide3/item-chew.png') no-repeat;
+            background-position: left center;
+            background-size: 51rem;
+          }
+
+          &:nth-of-type(2) {
+            background: transparent url('../media/images/slide3/item-hand.png') no-repeat;
+            background-position: left center;
+            background-size: 51rem;
+          }
+
+          &:nth-of-type(3) {
+            background: transparent url('../media/images/slide3/item-heart.png') no-repeat;
+            background-position: left center;
+            background-size: 51rem;
+          }
+
+          &:nth-of-type(4) {
+            background: transparent url('../media/images/slide3/item-good.png') no-repeat;
+            background-position: left center;
+            background-size: 51rem;
+          }
+        }
+      }
+    }
+  }
+
+  section#study {
+    div.flexadin-heading {
+      background: transparent url('../media/images/slide3/approved.svg') no-repeat;
+      background-position: left center;
+      background-size: 88rem 86rem;
+      max-width: 544rem;
+      padding-left: 108rem;
+      position: relative;
+
+      &::before {
+        height: 100%;
+      }
+
+      img {
+        width: 88rem;
+        height: 86rem;
+        animation: show 1.6s steps(2, start) infinite;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+      }
+    }
+
+    div#study-results {
+      height: 345rem;
+      padding-left: 86.68rem;
+      gap: 40rem;
+      align-items: flex-end;
+      display: flex;
+
+      div.study-result {
+        color: #fff;
+        width: 201rem;
+        height: 178.5rem;
+        margin-top: 14rem;
+        margin-bottom: 63rem;
+        margin-left: 29rem;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        animation: fade-in-right-short 0.8s ease-out;
+        position: relative;
+        -webkit-clip-path: url(#my-clip-path);
+        clip-path: url(#my-clip-path);
+        z-index: 2;
+
+        &::after {
+          background-color: var(--primary-flexadin-blue);
+          width: 300rem;
+          height: 300rem;
+          top: 0;
+          content: '';
+          position: absolute;
+          transform: translateX(-200rem);
+          clip-path: polygon(0 0, 100% 0%, 46% 100%, 0% 100%);
+          z-index: 1;
+        }
+
+        &.cat {
+          background: transparent url('../media/images/slide3/triangle-cat.png') no-repeat;
+          background-size: 201rem 178.5rem;
+
+          &::after {
+            animation: progress-cat 1s ease-out 0.8s forwards;
+          }
+        }
+
+        &.dog {
+          background: transparent url('../media/images/slide3/triangle-dog.png') no-repeat;
+          background-size: 201rem 178.5rem;
+
+          &::after {
+            animation: progress-dog 1s ease-out 0.8s forwards;
+          }
+        }
+
+        img {
+          width: 201rem;
+          height: 178.5rem;
+          top: 0;
+          left: 0;
+          position: absolute;
+        }
+
+        > div {
+          width: 100%;
+          height: 100%;
+          top: 14rem;
+          left: 0;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          display: flex;
+          position: absolute;
+          opacity: 0;
+          animation: fadein 0.6s ease-out 2s forwards;
+          z-index: 2;
+
+          h1 {
+            line-height: 40rem;
+            margin: 0;
+          }
+
+          p {
+            text-transform: uppercase;
+            line-height: normal;
+          }
+        }
+      }
+
+      figure#study-cat {
+        min-width: 360rem;
+        position: relative;
+
+        &::before {
+          background: transparent url('../media/images/slide3/swirl.svg') no-repeat;
+          background-size: 232.36rem;
+          background-position: left top;
+          width: 232.36rem;
+          height: 232.36rem;
+          bottom: 80.93rem;
+          left: 30rem;
+          content: '';
+          position: absolute;
+          z-index: 0;
+        }
+
+        > img {
+          width: 201.379rem;
+          height: 303.175rem;
+          bottom: 41.1rem;
+          left: 157.12rem;
+          position: absolute;
+        }
+      }
+
+      figure#study-dog {
+        position: relative;
+
+        &::before {
+          background: transparent url('../media/images/slide3/swirl.svg') no-repeat;
+          background-size: 232.36rem;
+          background-position: left top;
+          width: 232.36rem;
+          height: 232.36rem;
+          bottom: 124.08rem;
+          left: 11.06rem;
+          content: '';
+          position: absolute;
+          z-index: 0;
+        }
+
+        > img:nth-of-type(1) {
+          width: 511rem;
+          height: 375rem;
+          left: 219.04rem;
+          bottom: 188.04rem;
+          position: absolute;
+          z-index: 1;
+        }
+
+        > img:nth-of-type(2) {
+          width: 442.592rem;
+          height: 518.939rem;
+          bottom: 41.1rem;
+          left: 111.75rem;
+          position: absolute;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: var(--primary-flexadin-blue);
+    width: 100vw;
+    height: 75rem;
+    bottom: 0;
+    left: 0;
+    padding: 0 52rem 0 49.63rem;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    position: fixed;
+
+    > p {
+      font-family: 'Poppins';
+      font-size: 10rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: #fff;
+      padding-right: 100rem;
+    }
+
+    > img {
+      width: 249.373rem;
+      height: 30rem;
+      margin-left: auto;
+    }
+  }
+
+  .svg {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

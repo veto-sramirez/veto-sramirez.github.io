@@ -1,0 +1,1633 @@
+:root {
+  --primary-flexadin-blue: #211451;
+  --primary-light-blue: #00A0DF;
+  --complimentary-acid-green: #85F19C;
+  --complimentary-yellow: #FFD541;
+  --complimentary-red: #BD4114;
+  --cool-grey: #A7A9AC;
+  --light-grey: #EDEDED;
+  --uc-ii-green: #71974A;
+  --dark-green: #4D5A30;
+}
+
+html {
+  /* 1 rem = 1 design pixel */
+  font-size: 0.0732064422vw;
+  font-size: min(0.0732064422vw, 0.09765625vh);
+}
+
+body {
+  background-color: #fff;
+  font-family: "Poppins";
+  padding: 0;
+  margin: 0;
+}
+body > main {
+  background-color: inherit;
+  width: 100vw;
+  height: 100vh;
+  top: 70rem;
+  left: 0;
+  position: absolute;
+}
+body > div#blackout {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  z-index: 1;
+}
+body.blackout > div#blackout {
+  display: block;
+}
+
+h1 {
+  font-family: "Poppins";
+  font-size: 40rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2 {
+  font-family: "Poppins";
+  font-size: 32rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--primary-flexadin-blue);
+}
+h2 > sup {
+  font-family: "Poppins";
+  font-size: 21rem;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 9rem;
+}
+
+h3 {
+  font-family: "Poppins";
+  font-size: 28rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--primary-flexadin-blue);
+}
+
+h4 {
+  font-family: "Poppins";
+  font-size: 24rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+h4.green,
+h4 > span {
+  color: var(--complimentary-acid-green);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  font-family: "Poppins";
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28rem; /* 175% */
+}
+p > b {
+  color: var(--uc-ii-green);
+}
+
+div.flexadin-heading {
+  flex-direction: column;
+  display: flex;
+}
+
+button {
+  border: none;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  cursor: pointer;
+}
+button.action {
+  border-radius: 15rem;
+  background-color: var(--primary-flexadin-blue);
+  font-family: "Poppins";
+  font-size: 20rem;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--complimentary-acid-green);
+  padding: 17rem 45rem;
+  gap: 10rem;
+}
+button.action.light {
+  border: 1rem solid var(--primary-flexadin-blue);
+  background-color: #fff;
+  color: var(--primary-flexadin-blue);
+}
+
+nav#menu {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+}
+nav#menu > button {
+  background: transparent url("../media/images/base_images/hamburger.svg") no-repeat;
+  background-size: 74rem;
+  width: 74rem;
+  height: 74rem;
+  top: 32rem;
+  left: 48rem;
+  position: fixed;
+}
+nav#menu ul {
+  background-color: #fff;
+  width: 303rem;
+  height: 100vh;
+  padding-top: 90rem;
+  padding-left: 48rem;
+  top: 0;
+  left: 0;
+  gap: 30rem;
+  flex-direction: column;
+  display: flex;
+  position: fixed;
+  transform: translateX(-303rem);
+  transition: transform 0.4s ease-out;
+  z-index: 1;
+}
+nav#menu ul.open {
+  transform: translateX(0);
+}
+nav#menu ul > li {
+  max-width: 198rem;
+}
+nav#menu ul > li > a {
+  font-family: "Poppins";
+  font-size: 28rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  color: var(--primary-flexadin-blue);
+}
+
+div.flexadin-table {
+  height: 190rem;
+  padding: 15rem 25rem;
+  display: table;
+  position: relative;
+}
+div.flexadin-table::before {
+  border-radius: 15rem;
+  background-color: var(--dark-green);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  opacity: 0.1;
+}
+div.flexadin-table > div.flexadin-row {
+  display: table-row;
+  position: relative;
+}
+div.flexadin-table > div.flexadin-row:not(:last-of-type) > div.flexadin-col {
+  border-bottom: 1px solid rgba(33, 20, 81, 0.2);
+}
+div.flexadin-table > div.flexadin-row > div.flexadin-col {
+  font-family: "Poppins";
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28rem; /* 175% */
+  color: var(--primary-flexadin-blue);
+  vertical-align: middle;
+  display: table-cell;
+  position: relative;
+}
+div.flexadin-table > div.flexadin-row > div.flexadin-col:not(:last-of-type)::after {
+  background-color: rgba(33, 20, 81, 0.2);
+  width: 1rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  content: "";
+  position: absolute;
+}
+div.flexadin-table > div.flexadin-row > div.flexadin-col:first-of-type {
+  font-weight: bold;
+  white-space: nowrap;
+}
+div.flexadin-table > div.flexadin-row > div.flexadin-col:nth-of-type(1) {
+  padding: 0 14rem 0 0;
+}
+div.flexadin-table > div.flexadin-row > div.flexadin-col:nth-of-type(2) {
+  padding: 0 14rem;
+}
+div.flexadin-table > div.flexadin-row > div.flexadin-col:nth-of-type(3) {
+  padding: 0 0 0 14rem;
+}
+div.flexadin-table > div.flexadin-row:first-of-type > div.flexadin-col:nth-of-type(1) {
+  padding: 0 14rem 0 0;
+}
+div.flexadin-table > div.flexadin-row:first-of-type > div.flexadin-col:nth-of-type(2) {
+  padding: 0 14rem 0 14rem;
+}
+div.flexadin-table > div.flexadin-row:first-of-type > div.flexadin-col:nth-of-type(3) {
+  padding: 0 0 0 14rem;
+}
+div.flexadin-table > div.flexadin-row:last-of-type > div.flexadin-col:nth-of-type(1) {
+  padding: 0 14rem 0 0;
+}
+div.flexadin-table > div.flexadin-row:last-of-type > div.flexadin-col:nth-of-type(2) {
+  padding: 0 14rem 0 14rem;
+}
+div.flexadin-table > div.flexadin-row:last-of-type > div.flexadin-col:nth-of-type(3) {
+  padding: 0 0 0 14rem;
+}
+
+body#slide1 > main {
+  top: 0;
+  display: flex;
+}
+body#slide1 > main > div#hero {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+body#slide1 > main > div#hero > div#hero-background {
+  background: transparent url("../media/images/slide1/background.png") no-repeat;
+  background-size: 100% auto;
+  width: 100%;
+  height: auto;
+  bottom: 287rem;
+  left: 0;
+  position: absolute;
+}
+body#slide1 > main > div#hero > div#hero-background > img {
+  width: 100vw;
+  height: auto;
+  opacity: 0;
+}
+body#slide1 > main > div#hero > div#hero-background > div#whirls > div.whirl {
+  position: absolute;
+  opacity: 0.8;
+  filter: blur(5rem);
+  animation: whirl 2s ease-out infinite;
+}
+body#slide1 > main > div#hero > div#hero-background > div#whirls > div.whirl.cat {
+  background: transparent url("../media/images/slide1/whirl-cat.png") no-repeat;
+  background-size: 100%;
+  width: 5.1976573939%;
+  height: 9.6336499322%;
+  top: 81.9538670285%;
+  left: 8.4187408492%;
+}
+body#slide1 > main > div#hero > div#hero-background > div#whirls > div.whirl.dog {
+  background: transparent url("../media/images/slide1/whirl-dog.png") no-repeat;
+  background-size: 100%;
+  width: 7.1010248902%;
+  height: 13.1614654003%;
+  top: 75.8480325645%;
+  left: 31.1127379209%;
+}
+body#slide1 > main > div#hero > div#hero-background > div#whirls > div.whirl.horse {
+  background: transparent url("../media/images/slide1/whirl-horse-new.png") no-repeat;
+  background-size: 100%;
+  width: 10.8345534407%;
+  height: 20.0814111262%;
+  top: 71.8344640434%;
+  left: 41.5387994143%;
+}
+body#slide1 > main > div#hero div#mobility {
+  border-radius: 0rem 0rem 5rem 5rem;
+  background-color: var(--primary-flexadin-blue);
+  font-family: "Poppins";
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #fff;
+  width: 203rem;
+  height: 55rem;
+  padding-top: 15rem;
+  top: 0;
+  right: 60rem;
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  animation: slide-down-s1-mobility 0.6s ease-out forwards;
+  position: absolute;
+}
+body#slide1 > main > div#hero div#mobility::after {
+  background-color: var(--complimentary-acid-green);
+  width: 153rem;
+  height: 4rem;
+  right: 0;
+  bottom: 15rem;
+  left: 0;
+  margin: 0 auto;
+  content: "";
+  position: absolute;
+}
+body#slide1 > main div#intro {
+  width: 570rem;
+  bottom: 28rem;
+  left: 135rem;
+  flex-direction: column;
+  display: inline-flex;
+  position: absolute;
+}
+body#slide1 > main div#intro > h3 {
+  line-height: normal;
+  margin-bottom: 17rem;
+}
+body#slide1 > main div#intro > h3 > span {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  animation: type 1s steps(60, end) 0.3s forwards;
+  display: block;
+}
+body#slide1 > main div#intro > h3 > span:nth-of-type(2) {
+  animation-delay: 1.1s;
+}
+body#slide1 > main div#intro > div:not(:last-of-type) {
+  margin-bottom: 20rem;
+}
+body#slide1 > main div#intro > div#intro-buttons {
+  gap: 10rem;
+  display: flex;
+}
+body#slide1 > main div#intro > div#legal {
+  gap: 19rem;
+  display: flex;
+}
+body#slide1 > main div#intro > div#legal > img {
+  width: 110.294rem;
+  height: 45rem;
+}
+body#slide1 > main div#intro > div#legal > p {
+  font-family: "Poppins";
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: lowercase;
+  color: var(--cool-grey);
+}
+body#slide1 > main div#products {
+  right: 96rem;
+  bottom: 51rem;
+  animation: slide-in-s1-products 0.6s ease-out forwards;
+  position: absolute;
+}
+body#slide1 > main div#products > img {
+  width: 474rem;
+  height: 575rem;
+}
+
+body#slide2 {
+  background: url("../media/images/slide2/footprints.svg") no-repeat, url("../media/images/slide2/yellow-block.svg") no-repeat;
+  background-size: 149rem 132rem, 331rem 406rem;
+  background-position: right 32rem top 20rem, right bottom;
+}
+body#slide2 div.flexadin-heading {
+  padding-bottom: 5rem;
+  position: relative;
+}
+body#slide2 div.flexadin-heading::before {
+  border-radius: 5rem;
+  background-color: var(--complimentary-yellow);
+  width: 5rem;
+  height: calc(100% - 18rem);
+  top: 6rem;
+  bottom: 0;
+  left: -20rem;
+  content: "";
+  position: absolute;
+}
+body#slide2 div.flexadin-heading.second {
+  margin-bottom: 34rem;
+}
+body#slide2 div.flexadin-heading.second h2 {
+  width: 0;
+  opacity: 0;
+  animation: type 1s steps(60, end) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body#slide2 div.flexadin-heading.second::before {
+  height: 90%;
+  top: 0;
+}
+body#slide2 > main {
+  padding-right: 112rem;
+  padding-left: 156rem;
+  display: flex;
+}
+body#slide2 > main > section {
+  width: 100%;
+}
+body#slide2 > main > section:not(:last-of-type) {
+  margin-bottom: 40rem;
+}
+body#slide2 > main > section > p {
+  max-width: 886rem;
+  padding-bottom: 28rem;
+}
+body#slide2 > main div#cards {
+  gap: 16rem;
+  display: flex;
+}
+body#slide2 > main div#cards > div#products {
+  width: 365rem;
+  align-items: flex-start !important;
+  display: flex;
+  position: relative;
+}
+body#slide2 > main div#cards > div#products::after {
+  background: transparent url("../media/images/slide2/uc-ii.png") no-repeat;
+  background-size: 87rem 33rem;
+  background-position: left calc(50% - 23rem) top;
+  width: 100%;
+  height: 33rem;
+  top: 0;
+  margin: auto;
+  content: "";
+  position: absolute;
+}
+body#slide2 > main div#cards > div#products > div.product {
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+  display: flex;
+}
+body#slide2 > main div#cards > div#products > div.product:nth-of-type(1) > img {
+  width: 139rem;
+  height: 129rem;
+}
+body#slide2 > main div#cards > div#products > div.product:nth-of-type(2) > img {
+  width: 226rem;
+  height: 163rem;
+  margin-top: -34rem;
+}
+body#slide2 > main div#cards > div#products > div.product p {
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 144rem;
+}
+body#slide2 > main div#cards > div.flip-card {
+  height: 196rem;
+  perspective: 1000rem;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+}
+body#slide2 > main div#cards > div.flip-card:nth-of-type(2) {
+  width: 380rem;
+}
+body#slide2 > main div#cards > div.flip-card:nth-of-type(2) div.card-back {
+  padding: 0 45rem;
+}
+body#slide2 > main div#cards > div.flip-card:nth-of-type(3) {
+  width: 330rem;
+}
+body#slide2 > main div#cards > div.flip-card:nth-of-type(3) div.card-back {
+  padding: 0 56rem;
+}
+body#slide2 > main div#cards > div.flip-card.flip > div.card-inner {
+  transform: rotateY(-180deg);
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div {
+  border-radius: 20rem;
+  color: var(--primary-flexadin-blue);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-front, body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-front {
+  background-color: var(--light-grey);
+  box-shadow: 0rem 2rem 4rem 0rem rgba(84, 87, 90, 0.2);
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-front::after {
+  background: transparent url("../media/images/slide2/icon-plus.svg") no-repeat;
+  background-size: 28rem;
+  width: 28rem;
+  height: 28rem;
+  right: 17rem;
+  bottom: 15rem;
+  content: "";
+  position: absolute;
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-front img {
+  width: 107rem;
+  height: 40rem;
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-back {
+  border: 1rem solid var(--uc-ii-green);
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+body#slide2 > main div#cards > div.flip-card > div.card-inner > div.card-back::after {
+  background: transparent url("../media/images/slide2/icon-negative.svg") no-repeat;
+  background-size: 28rem;
+  width: 28rem;
+  height: 28rem;
+  right: 17rem;
+  bottom: 15rem;
+  content: "";
+  position: absolute;
+}
+body#slide2 > main section#details > div {
+  gap: 25rem;
+  flex-direction: column;
+  display: flex;
+}
+body#slide2 > main section#details div#explanation {
+  gap: 25rem;
+  display: flex;
+}
+body#slide2 > main section#details div#diagram1 {
+  width: 492rem;
+  padding-right: 74rem;
+  gap: 26rem;
+  display: flex;
+  position: relative;
+}
+body#slide2 > main section#details div#diagram1 > div#diagram1-labels p:not(:last-of-type) {
+  max-width: 209rem;
+  margin-bottom: 29rem;
+}
+body#slide2 > main section#details div#diagram1 > div#diagram1-labels p:last-of-type {
+  max-width: 197rem;
+}
+body#slide2 > main section#details div#diagram1 > div#diagram1-labels p b {
+  color: var(--primary-flexadin-blue);
+}
+body#slide2 > main section#details div#diagram1 > figure#diagram1-image {
+  position: relative;
+}
+body#slide2 > main section#details div#diagram1 > figure#diagram1-image::after {
+  background: url("../media/images/slide2/bone-arrow-1.svg") no-repeat, url("../media/images/slide2/bone-arrow-2.svg") no-repeat;
+  background-size: 25rem 21rem, 27rem 16rem;
+  background-position: left 0 top 99rem, left 12rem top 215rem;
+  width: 50rem;
+  height: 100%;
+  top: 0;
+  left: -25rem;
+  content: "";
+  z-index: 2;
+  position: absolute;
+}
+body#slide2 > main section#details div#diagram1 > figure#diagram1-image > img {
+  width: 165rem;
+  height: 260rem;
+}
+body#slide2 > main section#details div#diagram1 > figure#diagram1-image > div.highlight {
+  background: transparent url("../media/images/slide2/bone-highlight.svg") no-repeat;
+  background-size: 100%;
+  width: 34rem;
+  height: 34rem;
+  position: absolute;
+  animation: grow 2s ease-out-out infinite;
+  transform: rotateZ(360deg);
+  will-change: transform;
+}
+body#slide2 > main section#details div#diagram1 > figure#diagram1-image > div.highlight:first-of-type {
+  top: 114rem;
+  left: 5rem;
+}
+body#slide2 > main section#details div#diagram1 > figure#diagram1-image > div.highlight:last-of-type {
+  top: 172rem;
+  left: 66rem;
+}
+body#slide2 > main section#details div#diagram1 > div#green-arrows {
+  background: transparent url("../media/images/slide2/arrows.svg") no-repeat;
+  background-size: 74rem 25rem;
+  width: 0;
+  height: 25rem;
+  top: 134rem;
+  left: 418rem;
+  position: absolute;
+  animation: green-arrows 2s steps(1, end) infinite;
+  transform: rotateZ(360deg);
+  will-change: transform;
+}
+body#slide2 > main section#details div#diagram2 {
+  width: 581rem;
+  padding-right: 74rem;
+  gap: 26rem;
+  display: flex;
+  position: relative;
+}
+body#slide2 > main section#details div#diagram2 > div#diagram2-labels p:not(:last-of-type) {
+  max-width: 217rem;
+  margin-bottom: 29rem;
+}
+body#slide2 > main section#details div#diagram2 > div#diagram2-labels p:last-of-type {
+  max-width: 283rem;
+}
+body#slide2 > main section#details div#diagram2 > div#diagram2-labels p b {
+  color: var(--uc-ii-green);
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image {
+  top: 0;
+  left: 234rem;
+  position: absolute;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image > img {
+  width: 304rem;
+  height: 262rem;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image > div.highlight {
+  background: transparent url("../media/images/slide2/green-highlight.svg") no-repeat;
+  background-size: 100%;
+  width: 34rem;
+  height: 34rem;
+  position: absolute;
+  animation: grow 2s ease-out-out infinite;
+  transform: rotateZ(360deg);
+  will-change: transform;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image > div.highlight:first-of-type {
+  top: 71rem;
+  left: 43rem;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image > div.highlight:nth-of-type(2) {
+  top: 166rem;
+  left: 200rem;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image > button {
+  background: transparent url("../media/images/slide2/icon-plus.svg") no-repeat;
+  background-size: 28rem;
+  width: 28rem;
+  height: 28rem;
+  top: 0;
+  left: 139rem;
+  position: absolute;
+  z-index: 2;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image > button.open {
+  background: transparent url("../media/images/slide2/icon-negative.svg") no-repeat;
+  background-size: 28rem;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image div#diagram2-overlay {
+  border-radius: 20rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0rem 4rem 4rem 0rem rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15rem);
+  width: 256rem;
+  padding: 21rem 30rem;
+  top: 0;
+  left: 154rem;
+  box-sizing: border-box;
+  transition: opacity 1s;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image div#diagram2-overlay.open {
+  opacity: 1;
+}
+body#slide2 > main section#details div#diagram2 > figure#diagram2-image div#diagram2-overlay > p {
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+body#slide2 > main div#explanation-labels {
+  margin-bottom: 19rem;
+  gap: 107rem;
+  display: flex;
+}
+body#slide2 > main div#explanation-labels > div {
+  border-radius: 5rem;
+  box-shadow: 0rem 2rem 4rem 0rem rgba(27, 20, 100, 0.2);
+  font-size: 16rem;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  height: 54rem;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+body#slide2 > main div#explanation-labels > div:nth-of-type(1) {
+  background-color: #fff;
+  color: var(--primary-flexadin-blue);
+  width: 409rem;
+}
+body#slide2 > main div#explanation-labels > div:nth-of-type(2) {
+  border-radius: 5rem;
+  background-color: var(--uc-ii-green);
+  box-shadow: 0rem 2rem 4rem 0rem rgba(27, 20, 100, 0.2);
+  color: #fff;
+  width: 581rem;
+}
+body#slide2 > main footer {
+  font-family: "Poppins";
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--cool-grey);
+}
+body#slide2 > main footer > span {
+  color: var(--complimentary-red);
+}
+
+body#slide3 {
+  background: url("../media/images/slide3/footprints.svg") no-repeat, url("../media/images/slide3/green-block.svg") no-repeat;
+  background-size: 149rem 132rem, 345rem 465rem;
+  background-position: right 32rem top 20rem, right bottom;
+  font-family: "Poppins";
+}
+body#slide3 div.flexadin-heading {
+  margin-bottom: 21rem;
+  position: relative;
+}
+body#slide3 div.flexadin-heading::before {
+  border-radius: 5rem;
+  background-color: var(--complimentary-acid-green);
+  width: 5rem;
+  height: calc(100% - 18rem);
+  top: 6rem;
+  bottom: 0;
+  left: -20rem;
+  content: "";
+  position: absolute;
+}
+body#slide3 div.flexadin-heading.second {
+  margin-bottom: 34rem;
+}
+body#slide3 div.flexadin-heading.second::before {
+  height: 90%;
+  top: 0;
+}
+body#slide3 div.flexadin-heading > h3,
+body#slide3 div.flexadin-heading > p {
+  animation-delay: 0.8s;
+}
+body#slide3 div.flexadin-heading > h3:nth-of-type(2),
+body#slide3 div.flexadin-heading > p:nth-of-type(2) {
+  animation-delay: 1.6s;
+}
+body#slide3 div.flexadin-heading > h3:nth-of-type(3),
+body#slide3 div.flexadin-heading > p:nth-of-type(3) {
+  animation-delay: 2.4s;
+}
+body#slide3 > main {
+  padding-right: 112rem;
+  padding-left: 156rem;
+  gap: 49rem;
+  display: flex;
+}
+body#slide3 > main > section {
+  width: 100%;
+}
+body#slide3 section ul {
+  gap: 20rem;
+  flex-direction: column;
+  display: flex;
+  animation: fade-in-left 0.8s ease-out;
+}
+body#slide3 section ul > li {
+  font-size: 20rem;
+  font-style: normal;
+  color: var(--primary-flexadin-blue);
+  height: 51rem;
+  padding-left: 67rem;
+  align-items: center;
+  display: flex;
+}
+body#slide3 section#introduction div#metrics-table {
+  animation: fade-in-right 0.8s ease-out;
+}
+body#slide3 section#introduction > div {
+  width: 1055rem;
+  justify-content: space-between;
+  display: flex;
+}
+body#slide3 section#introduction > div > ul > li:nth-of-type(1) {
+  background: transparent url("../media/images/slide3/item-chew.png") no-repeat;
+  background-position: left center;
+  background-size: 51rem;
+}
+body#slide3 section#introduction > div > ul > li:nth-of-type(2) {
+  background: transparent url("../media/images/slide3/item-hand.png") no-repeat;
+  background-position: left center;
+  background-size: 51rem;
+}
+body#slide3 section#introduction > div > ul > li:nth-of-type(3) {
+  background: transparent url("../media/images/slide3/item-heart.png") no-repeat;
+  background-position: left center;
+  background-size: 51rem;
+}
+body#slide3 section#introduction > div > ul > li:nth-of-type(4) {
+  background: transparent url("../media/images/slide3/item-good.png") no-repeat;
+  background-position: left center;
+  background-size: 51rem;
+}
+body#slide3 section#study div.flexadin-heading {
+  background: transparent url("../media/images/slide3/approved.svg") no-repeat;
+  background-position: left center;
+  background-size: 88rem 86rem;
+  max-width: 544rem;
+  padding-left: 108rem;
+  position: relative;
+}
+body#slide3 section#study div.flexadin-heading::before {
+  height: 100%;
+}
+body#slide3 section#study div.flexadin-heading img {
+  width: 88rem;
+  height: 86rem;
+  animation: show 1.6s steps(2, start) infinite;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
+body#slide3 section#study div#study-results {
+  height: 345rem;
+  padding-left: 86.68rem;
+  gap: 40rem;
+  align-items: flex-end;
+  display: flex;
+}
+body#slide3 section#study div#study-results div.study-result {
+  color: #fff;
+  width: 201rem;
+  height: 178.5rem;
+  margin-top: 14rem;
+  margin-bottom: 63rem;
+  margin-left: 29rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  animation: fade-in-right-short 0.8s ease-out;
+  position: relative;
+  -webkit-clip-path: url(#my-clip-path);
+  clip-path: url(#my-clip-path);
+  z-index: 2;
+}
+body#slide3 section#study div#study-results div.study-result::after {
+  background-color: var(--primary-flexadin-blue);
+  width: 300rem;
+  height: 300rem;
+  top: 0;
+  content: "";
+  position: absolute;
+  transform: translateX(-200rem);
+  clip-path: polygon(0 0, 100% 0%, 46% 100%, 0% 100%);
+  z-index: 1;
+}
+body#slide3 section#study div#study-results div.study-result.cat {
+  background: transparent url("../media/images/slide3/triangle-cat.png") no-repeat;
+  background-size: 201rem 178.5rem;
+}
+body#slide3 section#study div#study-results div.study-result.cat::after {
+  animation: progress-cat 1s ease-out 0.8s forwards;
+}
+body#slide3 section#study div#study-results div.study-result.dog {
+  background: transparent url("../media/images/slide3/triangle-dog.png") no-repeat;
+  background-size: 201rem 178.5rem;
+}
+body#slide3 section#study div#study-results div.study-result.dog::after {
+  animation: progress-dog 1s ease-out 0.8s forwards;
+}
+body#slide3 section#study div#study-results div.study-result img {
+  width: 201rem;
+  height: 178.5rem;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+body#slide3 section#study div#study-results div.study-result > div {
+  width: 100%;
+  height: 100%;
+  top: 14rem;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  animation: fadein 0.6s ease-out 2s forwards;
+  z-index: 2;
+}
+body#slide3 section#study div#study-results div.study-result > div h1 {
+  line-height: 40rem;
+  margin: 0;
+}
+body#slide3 section#study div#study-results div.study-result > div p {
+  text-transform: uppercase;
+  line-height: normal;
+}
+body#slide3 section#study div#study-results figure#study-cat {
+  min-width: 360rem;
+  position: relative;
+}
+body#slide3 section#study div#study-results figure#study-cat::before {
+  background: transparent url("../media/images/slide3/swirl.svg") no-repeat;
+  background-size: 232.36rem;
+  background-position: left top;
+  width: 232.36rem;
+  height: 232.36rem;
+  bottom: 80.93rem;
+  left: 30rem;
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+body#slide3 section#study div#study-results figure#study-cat > img {
+  width: 201.379rem;
+  height: 303.175rem;
+  bottom: 41.1rem;
+  left: 157.12rem;
+  position: absolute;
+}
+body#slide3 section#study div#study-results figure#study-dog {
+  position: relative;
+}
+body#slide3 section#study div#study-results figure#study-dog::before {
+  background: transparent url("../media/images/slide3/swirl.svg") no-repeat;
+  background-size: 232.36rem;
+  background-position: left top;
+  width: 232.36rem;
+  height: 232.36rem;
+  bottom: 124.08rem;
+  left: 11.06rem;
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+body#slide3 section#study div#study-results figure#study-dog > img:nth-of-type(1) {
+  width: 511rem;
+  height: 375rem;
+  left: 219.04rem;
+  bottom: 188.04rem;
+  position: absolute;
+  z-index: 1;
+}
+body#slide3 section#study div#study-results figure#study-dog > img:nth-of-type(2) {
+  width: 442.592rem;
+  height: 518.939rem;
+  bottom: 41.1rem;
+  left: 111.75rem;
+  position: absolute;
+  z-index: 2;
+}
+body#slide3 footer {
+  background-color: var(--primary-flexadin-blue);
+  width: 100vw;
+  height: 75rem;
+  bottom: 0;
+  left: 0;
+  padding: 0 52rem 0 49.63rem;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  position: fixed;
+}
+body#slide3 footer > p {
+  font-family: "Poppins";
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  padding-right: 100rem;
+}
+body#slide3 footer > img {
+  width: 249.373rem;
+  height: 30rem;
+  margin-left: auto;
+}
+body#slide3 .svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+body#slide4 {
+  background: url("../media/images/slide4/footprints.svg") no-repeat, url("../media/images/slide4/blue-block.svg") no-repeat;
+  background-size: 149rem 132rem, 561.069rem 392.47rem;
+  background-position: right 32rem top 20rem, right bottom;
+  font-family: "Poppins";
+}
+body#slide4 div.flexadin-heading {
+  margin-bottom: 21rem;
+  position: relative;
+}
+body#slide4 div.flexadin-heading::before {
+  border-radius: 5rem;
+  background-color: var(--primary-light-blue);
+  width: 5rem;
+  height: calc(100% - 18rem);
+  top: 6rem;
+  bottom: 0;
+  left: -20rem;
+  content: "";
+  position: absolute;
+}
+body#slide4 div.flexadin-heading > h2 {
+  width: 1rem;
+  opacity: 0;
+  animation: type 1s steps(60, end) forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+body#slide4 div.flexadin-heading > h2 > span {
+  color: var(--primary-light-blue);
+}
+body#slide4 > main {
+  padding-right: 112rem;
+  padding-left: 156rem;
+  gap: 49rem;
+  display: flex;
+}
+body#slide4 > main > section {
+  width: 100%;
+}
+body#slide4 > main > section > *:nth-of-type(1) {
+  margin-bottom: 30rem;
+}
+body#slide4 > main > section > *:nth-of-type(2) {
+  margin-bottom: 61rem;
+}
+body#slide4 > main > section > *:nth-of-type(3) {
+  margin-bottom: 117rem;
+}
+body#slide4 div#metrics-table {
+  animation: fade-in-left-300 0.8s ease-out;
+}
+body#slide4 div#metrics-table::before {
+  background-color: var(--primary-flexadin-blue);
+}
+body#slide4 div#bullets {
+  animation: fade-in-left-300 0.8s ease-out;
+}
+body#slide4 div#bullets ul li {
+  font-family: "Poppins";
+  font-size: 20rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32rem; /* 160% */
+  max-width: 689rem;
+  padding-left: 20rem;
+  position: relative;
+}
+body#slide4 div#bullets ul li::before {
+  background: transparent url("../media/images/slide4/bullet.svg") no-repeat;
+  background-size: 8rem;
+  width: 8rem;
+  height: 8rem;
+  top: 11rem;
+  left: 0;
+  content: "";
+  position: absolute;
+}
+body#slide4 div#information {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 57rem;
+  display: flex;
+}
+body#slide4 div#information > div#products {
+  position: relative;
+}
+body#slide4 div#information > div#products > img {
+  width: 551rem;
+  height: 458rem;
+  animation: fade-in-up-500 0.8s ease-out;
+}
+body#slide4 div#information > div#products > div#exclusive {
+  background: transparent url("../media/images/slide4/blue-bubble.svg") no-repeat;
+  background-size: 100%;
+  width: 352.833rem;
+  height: 93rem;
+  top: -30rem;
+  left: 342.17rem;
+  padding-left: 38rem;
+  align-items: center;
+  justify-content: flex-start;
+  display: inline-flex;
+  animation: fade-in-down-500 0.8s ease-out;
+  position: absolute;
+}
+body#slide4 div#information > div#products > div#exclusive > h4 {
+  color: #fff;
+  width: 0;
+  opacity: 1;
+  animation: type 2s steps(60, end) 0.8s forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body#slide4 div#information > div#products > div#exclusive > h4 > span {
+  color: var(--complimentary-acid-green);
+}
+body#slide4 footer {
+  background-color: var(--primary-flexadin-blue);
+  width: 100vw;
+  height: 75rem;
+  bottom: 0;
+  left: 0;
+  padding: 0 52rem 0 49.63rem;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  position: fixed;
+}
+body#slide4 footer div > p {
+  font-family: "Poppins";
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  margin: 0;
+  padding-right: 100rem;
+}
+body#slide4 footer > img {
+  width: 249.373rem;
+  height: 30rem;
+  margin-left: auto;
+}
+
+body#slide5 {
+  background: url("../media/images/slide5/footprints.svg") no-repeat, url("../media/images/slide5/yellow-block.svg") no-repeat;
+  background-size: 149rem 132rem, 265rem 378rem;
+  background-position: right 28.84rem top 635rem, right top 323rem;
+  font-family: "Poppins";
+}
+body#slide5 div.flexadin-heading {
+  margin-bottom: 21rem;
+  position: relative;
+}
+body#slide5 div.flexadin-heading::before {
+  border-radius: 5rem;
+  background-color: var(--complimentary-red);
+  width: 5rem;
+  height: calc(100% - 18rem);
+  top: 6rem;
+  bottom: 0;
+  left: -20rem;
+  content: "";
+  position: absolute;
+}
+body#slide5 div.flexadin-heading > h2 {
+  width: 1rem;
+  opacity: 0;
+  animation: type 1s steps(60, end) forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+body#slide5 div.flexadin-heading > h2 > span {
+  color: var(--primary-light-blue);
+}
+body#slide5 > main {
+  padding-right: 112rem;
+  padding-left: 156rem;
+  gap: 49rem;
+  display: flex;
+}
+body#slide5 > main > section {
+  width: 100%;
+}
+body#slide5 > main > section > *:nth-of-type(1) {
+  margin-bottom: 30rem;
+}
+body#slide5 > main > section > *:nth-of-type(2) {
+  margin-bottom: 61rem;
+}
+body#slide5 > main > section > *:nth-of-type(3) {
+  margin-bottom: 117rem;
+}
+body#slide5 .flexadin-table::before {
+  background-color: var(--complimentary-red);
+}
+body#slide5 .flexadin-table .bubble {
+  animation: fade-in-down-500-bounce 0.8s ease-out;
+}
+body#slide5 .flexadin-table.horses {
+  max-width: 303rem;
+}
+body#slide5 div.information {
+  gap: 23rem;
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+}
+body#slide5 div.information.cats div.flexadin-table {
+  margin-top: 39rem;
+}
+body#slide5 div.information.horses {
+  gap: 49rem;
+}
+body#slide5 div.information > ul {
+  max-width: 524rem;
+  animation: fade-in-left-300-bounce 1s ease-out;
+}
+body#slide5 div.information > ul > li {
+  font-family: "Poppins";
+  font-size: 20rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  min-height: 51rem;
+  padding-left: 77rem;
+  align-items: center;
+  display: flex;
+}
+body#slide5 div.information > ul > li:not(:last-of-type) {
+  margin-bottom: 20rem;
+}
+body#slide5 div.information > ul > li.shape {
+  background: transparent url("../media/images/slide5/item-shape.png") no-repeat;
+  background-size: 51rem;
+  background-position: left center;
+}
+body#slide5 div.information > ul > li.hand {
+  background: transparent url("../media/images/slide5/item-hand.png") no-repeat;
+  background-size: 51rem;
+  background-position: left center;
+}
+body#slide5 div.information > ul > li.ucii {
+  background: transparent url("../media/images/slide5/item-ucii.png") no-repeat;
+  background-size: 51rem 51rem;
+  background-position: left center;
+}
+body#slide5 div.information > ul > li.banana {
+  background: transparent url("../media/images/slide5/item-banana.png") no-repeat;
+  background-size: 51rem;
+  background-position: left center;
+}
+body#slide5 div.information > ul > li.time {
+  background: transparent url("../media/images/slide5/item-time.png") no-repeat;
+  background-size: 51rem;
+  background-position: left center;
+}
+body#slide5 div.information div.product {
+  position: absolute;
+}
+body#slide5 div.information div.product.cats {
+  top: -77rem;
+  left: 303rem;
+}
+body#slide5 div.information div.product.cats > div {
+  background: transparent url("../media/images/slide5/bubble.svg") no-repeat;
+  background-size: 313rem 161rem;
+  width: 313rem;
+  height: 161rem;
+  top: -112rem;
+  left: -147rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+}
+body#slide5 div.information div.product.cats > div h4 {
+  font-size: 20rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #fff;
+}
+body#slide5 div.information div.product.cats > div h4.green {
+  color: var(--complimentary-acid-green);
+}
+body#slide5 div.information div.product.cats > div h4:last-of-type {
+  margin-bottom: 24rem;
+}
+body#slide5 div.information div.product.cats > img {
+  right: initial;
+  left: 303rem;
+  width: 349rem;
+  height: 386rem;
+}
+body#slide5 div.information div.product.horses {
+  top: -68rem;
+  left: 299rem;
+}
+body#slide5 div.information div.product.horses > img {
+  width: 199rem;
+  height: 321rem;
+}
+body#slide5 footer {
+  background-color: var(--primary-flexadin-blue);
+  width: 100vw;
+  height: 75rem;
+  bottom: 0;
+  left: 0;
+  padding: 0 52rem 0 49.63rem;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  position: fixed;
+}
+body#slide5 footer div > p {
+  font-family: "Poppins";
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  margin: 0;
+  padding-right: 100rem;
+}
+body#slide5 footer > img {
+  width: 249.373rem;
+  height: 30rem;
+  margin-left: auto;
+}
+
+@keyframes type {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    width: 30em;
+    opacity: 1;
+  }
+}
+@keyframes dropin {
+  from {
+    transform: translateY(-40rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+@keyframes show {
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes whirl {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.18);
+  }
+  60% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes green-arrows {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  25% {
+    width: 24.6666666667rem;
+  }
+  50% {
+    width: 49.3333333333rem;
+    opacity: 1;
+  }
+  75% {
+    width: 74rem;
+  }
+  100% {
+    width: 74rem;
+    opacity: 0;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes progress-cat {
+  from {
+    transform: translateX(-200rem);
+  }
+  to {
+    transform: translateX(-21rem);
+  }
+}
+@keyframes progress-dog {
+  from {
+    transform: translateX(-200rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-down-s1-mobility {
+  from {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-in-s1-products {
+  from {
+    transform: translateY(273rem);
+  }
+  60% {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-down-500 {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -500rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-down-500-bounce {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -500rem, 0);
+  }
+  60% {
+    transform: translate3d(0, 6rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-up-500 {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 500rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-left-300 {
+  from {
+    opacity: 0;
+    transform: translate3d(-300rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-left-300-bounce {
+  from {
+    opacity: 0;
+    transform: translate3d(-300rem, 0, 0);
+  }
+  60% {
+    transform: translate3d(6rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-right-short {
+  from {
+    opacity: 0;
+    transform: translate3d(50%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+div.flexadin-heading > h2:not(:last-child) {
+  animation: dropin 0.3s ease-out;
+}
+div.flexadin-heading > h3,
+div.flexadin-heading > p {
+  width: 1rem;
+  opacity: 0;
+  animation: type 1s steps(60, end) forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+div.flexadin-heading > h3:nth-of-type(2),
+div.flexadin-heading > p:nth-of-type(2) {
+  animation-delay: 0.8s;
+}
+div.flexadin-heading > h3:nth-of-type(3),
+div.flexadin-heading > p:nth-of-type(3) {
+  animation-delay: 1.6s;
+}
+
+/*# sourceMappingURL=main.css.map */

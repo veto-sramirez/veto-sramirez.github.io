@@ -1,0 +1,170 @@
+@use 'sass:math';
+
+body#slide1 {
+  > main {
+    top: 0;
+    display: flex;
+
+    > div#hero {
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      position: absolute;
+
+      > div#hero-background {
+        background: transparent url('../media/images/slide1/background.png') no-repeat;
+        background-size: 100% auto;
+        width: 100%;
+        height: auto;
+        bottom: 287rem;
+        left: 0;
+        position: absolute;
+
+        > img {
+          width: 100vw;
+          height: auto;
+          opacity: 0;
+        }
+
+        > div#whirls {
+          > div.whirl {
+            position: absolute;
+            opacity: 0.8;
+            filter: blur(5rem);
+            animation: whirl 2s ease-out infinite;
+
+            &.cat {
+              background: transparent url('../media/images/slide1/whirl-cat.png') no-repeat;
+              background-size: 100%;
+              width: math.percentage(math.div(71, 1366));
+              height: math.percentage(math.div(71, 737));;
+              top: math.percentage(math.div(604, 737));
+              left: math.percentage(math.div(115, 1366));
+            }
+
+            &.dog {
+              background: transparent url('../media/images/slide1/whirl-dog.png') no-repeat;
+              background-size: 100%;
+              width: math.percentage(math.div(97, 1366));
+              height: math.percentage(math.div(97, 737));;
+              top: math.percentage(math.div(559, 737));
+              left: math.percentage(math.div(425, 1366));
+            }
+
+            &.horse {
+              background: transparent url('../media/images/slide1/whirl-horse-new.png') no-repeat;
+              background-size: 100%;
+              width: math.percentage(math.div(148, 1366));
+              height: math.percentage(math.div(148, 737));;
+              top: math.percentage(math.div(529.42, 737));
+              left: math.percentage(math.div(567.42, 1366));
+            }
+          }
+        }
+      }
+
+      div#mobility {
+        border-radius: 0rem 0rem 5rem 5rem;
+        background-color: var(--primary-flexadin-blue);
+        font-family: 'Poppins';
+        font-size: 16rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        color: #fff;
+        width: 203rem;
+        height: 55rem;
+        padding-top: 15rem;
+        top: 0;
+        right: 60rem;
+        align-items: flex-start;
+        justify-content: center;
+        display: flex;
+        animation: slide-down-s1-mobility 0.6s ease-out forwards;
+        position: absolute;
+  
+        &::after {
+          background-color: var(--complimentary-acid-green);
+          width: 153rem;
+          height: 4rem;
+          right: 0;
+          bottom: 15rem;
+          left: 0;
+          margin: 0 auto;
+          content: '';
+          position: absolute;
+        }
+      }
+    }
+
+    div#intro {
+      width: 570rem;
+      bottom: 28rem;
+      left: 135rem;
+      flex-direction: column;
+      display: inline-flex;
+      position: absolute;
+
+      > h3 {
+        line-height: normal;
+        margin-bottom: 17rem;
+
+        > span {
+          white-space: nowrap;
+          overflow: hidden;
+          width: 0;
+          opacity: 0;
+          animation: type 1s steps(60, end) 0.3s forwards;
+          display: block;
+
+          &:nth-of-type(2) {
+            animation-delay: 1.1s;
+          }
+        }
+      }
+
+      > div:not(:last-of-type) {
+        margin-bottom: 20rem;
+      }
+
+      > div#intro-buttons {
+        gap: 10rem;
+        display: flex;
+      }
+
+      > div#legal {
+        gap: 19rem;
+        display: flex;
+        
+        > img {
+          width: 110.294rem;
+          height: 45rem;
+        }
+
+        > p {
+          font-family: 'Poppins';
+          font-size: 16rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-transform: lowercase;
+          color: var(--cool-grey);
+        }
+      }
+    }
+
+    div#products {
+      right: 96rem;
+      bottom: 51rem;
+      animation: slide-in-s1-products 0.6s ease-out forwards;
+      position: absolute;
+
+      > img {
+        width: 474rem;
+        height: 575rem;
+      }
+    }
+  }
+}

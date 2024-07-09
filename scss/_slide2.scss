@@ -1,0 +1,444 @@
+@use 'sass:math';
+
+body#slide2 {
+  background: url('../media/images/slide2/footprints.svg') no-repeat,
+    url('../media/images/slide2/yellow-block.svg') no-repeat;
+  background-size: 149rem 132rem, 331rem 406rem;
+  background-position: right 32rem top 20rem, right bottom;
+
+  div.flexadin-heading {
+    padding-bottom: 5rem;
+    position: relative;
+
+    &::before {
+      border-radius: 5rem;
+      background-color: var(--complimentary-yellow);
+      width: 5rem;
+      height: calc(100% - 18rem);
+      top: 6rem;
+      bottom: 0;
+      left: -20rem;
+      content: '';
+      position: absolute;
+    }
+
+    &.second {
+      margin-bottom: 34rem;
+
+      h2 {
+        width: 0;
+        opacity: 0;
+        animation: type 1s steps(60, end) forwards;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &::before {
+        height: 90%;
+        top: 0;
+      }
+    }
+  }
+
+  > main {
+    padding-right: 112rem;
+    padding-left: 156rem;
+    display: flex;
+
+    > section {
+      width: 100%;
+
+      &:not(:last-of-type) {
+        margin-bottom: 40rem;
+      }
+
+      > p {
+        max-width: 886rem;
+        padding-bottom: 28rem;
+      }
+    }
+
+    div#cards {
+      gap: 16rem;
+      display: flex;
+
+      > div#products {
+        width: 365rem;
+        align-items: flex-start !important;
+        display: flex;
+        position: relative;
+
+        &::after {
+          background: transparent url('../media/images/slide2/uc-ii.png') no-repeat;
+          background-size: 87rem 33rem;
+          background-position: left calc(50% - 23rem) top;
+          width: 100%;
+          height: 33rem;
+          top: 0;
+          margin: auto;
+          content: '';
+          position: absolute;
+        }
+
+        > div.product {
+          text-align: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 5rem;
+          display: flex;
+
+          &:nth-of-type(1) > img {
+            width: 139rem;
+            height: 129rem;
+          }
+
+          &:nth-of-type(2) > img {
+            width: 226rem;
+            height: 163rem;
+            margin-top: -34rem;
+          }
+
+          p {
+            font-weight: 700;
+            text-transform: uppercase;
+            max-width: 144rem;
+          }
+        }
+      }
+
+      > div.flip-card {
+        height: 196rem;
+        perspective: 1000rem;
+        display: inline-flex;
+        position: relative;
+        cursor: pointer;
+
+        &:nth-of-type(2) {
+          width: 380rem;
+
+          div.card-back {
+            padding: 0 45rem;
+          }
+        }
+
+        &:nth-of-type(3) {
+          width: 330rem;
+
+          div.card-back {
+            padding: 0 56rem;
+          }
+        }
+
+        &.flip {
+          > div.card-inner {
+            transform: rotateY(-180deg);
+          }
+        }
+
+        > div.card-inner {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+
+          > div {
+            border-radius: 20rem;
+            color: var(--primary-flexadin-blue);
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+            &.card-front,
+            &.card-back {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              -webkit-backface-visibility: hidden; /* Safari */
+              backface-visibility: hidden;
+            }
+
+            &.card-front {
+              background-color: var(--light-grey);
+              box-shadow: 0rem 2rem 4rem 0rem rgba(84, 87, 90, 0.20);
+
+              &::after {
+                background: transparent url('../media/images/slide2/icon-plus.svg') no-repeat;
+                background-size: 28rem;
+                width: 28rem;
+                height: 28rem;
+                right: 17rem;
+                bottom: 15rem;
+                content: '';
+                position: absolute;
+              }
+
+              img {
+                width: 107rem;
+                height: 40rem;
+              }
+            }
+
+            &.card-back {
+              border: 1rem solid var(--uc-ii-green);
+              background-color: #fff;
+              transform: rotateY(180deg);
+
+              &::after {
+                background: transparent url('../media/images/slide2/icon-negative.svg') no-repeat;
+                background-size: 28rem;
+                width: 28rem;
+                height: 28rem;
+                right: 17rem;
+                bottom: 15rem;
+                content: '';
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    section#details {
+      > div {
+        gap: 25rem;
+        flex-direction: column;
+        display: flex;
+      }
+
+      div#explanation {
+        gap: 25rem;
+        display: flex;
+      }
+
+      div#diagram1 {
+        width: 492rem;
+        padding-right: 74rem;
+        gap: 26rem;
+        display: flex;
+        position: relative;
+
+        > div#diagram1-labels {
+          p {
+            &:not(:last-of-type) {
+              max-width: 209rem;
+              margin-bottom: 29rem;
+            }
+
+            &:last-of-type {
+              max-width: 197rem;
+            }
+
+            b {
+              color: var(--primary-flexadin-blue);
+            }
+          }
+        }
+
+        > figure#diagram1-image {
+          position: relative;
+
+          &::after {
+            background: url('../media/images/slide2/bone-arrow-1.svg') no-repeat,
+              url('../media/images/slide2/bone-arrow-2.svg') no-repeat;
+            background-size: 25rem 21rem, 27rem 16rem;
+            background-position: left 0 top 99rem, left 12rem top 215rem;
+            width: 50rem;
+            height: 100%;
+            top: 0;
+            left: -25rem;
+            content: '';
+            z-index: 2;
+            position: absolute;
+          }
+
+          > img {
+            width: 165rem;
+            height: 260rem;  
+          }
+
+          > div.highlight {
+            background: transparent url('../media/images/slide2/bone-highlight.svg') no-repeat;
+            background-size: 100%;
+            width: 34rem;
+            height: 34rem;
+            position: absolute;
+            animation: grow 2s ease-out-out infinite;
+            transform: rotateZ(360deg);
+            will-change: transform;
+
+            &:first-of-type {
+              top: 114rem;
+              left: 5rem;
+            }
+
+            &:last-of-type {
+              top: 172rem;
+              left: 66rem;
+            }
+          }
+        }
+
+        > div#green-arrows {
+          background: transparent url('../media/images/slide2/arrows.svg') no-repeat;
+          background-size: 74rem 25rem;
+          width: 0;
+          height: 25rem;
+          top: 134rem;
+          left: 418rem;
+          position: absolute;
+          animation: green-arrows 2s steps(1, end) infinite;
+          transform: rotateZ(360deg);
+          will-change: transform;
+        }
+      }
+
+      div#diagram2 {
+        width: 581rem;
+        padding-right: 74rem;
+        gap: 26rem;
+        display: flex;
+        position: relative;
+
+        > div#diagram2-labels {
+          p {
+            &:not(:last-of-type) {
+              max-width: 217rem;
+              margin-bottom: 29rem;
+            }
+
+            &:last-of-type {
+              max-width: 283rem;
+            }
+
+            b {
+              color: var(--uc-ii-green);
+            }
+          }
+        }
+
+        > figure#diagram2-image {
+          top: 0;
+          left: 234rem;
+          position: absolute;
+
+          > img {
+            width: 304rem;
+            height: 262rem;  
+          }
+
+          > div.highlight {
+            background: transparent url('../media/images/slide2/green-highlight.svg') no-repeat;
+            background-size: 100%;
+            width: 34rem;
+            height: 34rem;
+            position: absolute;
+            animation: grow 2s ease-out-out infinite;
+            transform: rotateZ(360deg);
+            will-change: transform;
+
+            &:first-of-type {
+              top: 71rem;
+              left: 43rem;
+            }
+
+            &:nth-of-type(2) {
+              top: 166rem;
+              left: 200rem;
+            }
+          }
+
+          > button {
+            background: transparent url('../media/images/slide2/icon-plus.svg') no-repeat;
+            background-size: 28rem;
+            width: 28rem;
+            height: 28rem;
+            top: 0;
+            left: 139rem;
+            position: absolute;
+            z-index: 2;
+  
+            &.open {
+              background: transparent url('../media/images/slide2/icon-negative.svg') no-repeat;
+              background-size: 28rem;
+            }
+          }
+
+          div#diagram2-overlay {
+            border-radius: 20rem;
+            background: rgba(255, 255, 255, 0.80);
+            box-shadow: 0rem 4rem 4rem 0rem rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(15rem);
+            width: 256rem;
+            padding: 21rem 30rem;
+            top: 0;
+            left: 154rem;
+            box-sizing: border-box;
+            transition: opacity 1s;
+            opacity: 0;
+            position: absolute;
+            z-index: 1;
+
+            &.open {
+              opacity: 1.0;
+            }
+  
+            > p {
+              color: #000;
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    div#explanation-labels {
+      margin-bottom: 19rem;
+      gap: 107rem;
+      display: flex;
+
+      > div {
+        border-radius: 5rem;
+        box-shadow: 0rem 2rem 4rem 0rem rgba(27, 20, 100, 0.20);
+        font-size: 16rem;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        height: 54rem;
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+      }
+
+      > div:nth-of-type(1) {
+        background-color: #fff;
+        color: var(--primary-flexadin-blue);
+        width: 409rem;
+      }
+
+      > div:nth-of-type(2) {
+        border-radius: 5rem;
+        background-color: var(--uc-ii-green);
+        box-shadow: 0rem 2rem 4rem 0rem rgba(27, 20, 100, 0.20);
+        color: #fff;
+        width: 581rem;
+      }
+    }
+
+    footer {
+      font-family: 'Poppins';
+      font-size: 10rem;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--cool-grey);
+
+      > span {
+        color: var(--complimentary-red);
+      }
+    }
+  }
+}
